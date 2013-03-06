@@ -1,0 +1,114 @@
+﻿
+
+.nav-utility {
+	@extend %clearfix;
+
+	ul {
+		list-style: none;
+
+		li {
+			float: left;
+			
+			a {
+				border-right: 1px solid;
+				color: $secondary-text-color;
+				padding: 0 9px;
+			}
+
+		}
+	}
+}
+
+
+
+.nav-primary {
+	@extend %clearfix;
+
+	ul {
+		list-style: none;
+
+		li.top-level {
+			float: left;
+			font-size: 16px;
+			padding: 22px 27px 19px 27px;
+			position: relative;
+
+			.nav-title {
+				padding-right: 20px;
+			}
+
+			a {
+				color: $primary-text-color;
+			}
+
+			&:hover {
+				background-color: $primary-accent-color;
+				color: #FFFFFF;
+				-moz-transition-delay: 0s;
+				transition-delay: 0s;
+
+				.nav-title {
+					background-position: 100% -33%;
+					color: #FFFFFF;
+					transition-delay: 0s;
+				}
+
+				.nav-menu {
+					visibility: visible;
+					opacity: 1;
+					-moz-transition-delay: 0s;
+					transition-delay: 0s;
+					z-index: 200;
+
+					a {
+						background-color: $primary-accent-color;
+						text-decoration: none;
+					}
+				}
+			}
+
+
+
+			.nav-menu {
+				box-shadow:  2px 5px 7px -2px #b1b1b1;
+				margin: 0;
+				min-width: 350px;
+				opacity: 0;
+				padding: 0;
+				position: absolute;
+					top: 61px;
+					left: 0px;
+				-moz-transition: visibility 0s linear 0.25s,opacity 0.25s linear;
+				-webkit-transition: visibility 0s linear 0.25s,opacity 0.25s linear;
+				-o-transition: visibility 0s linear 0.25s,opacity 0.25s linear;
+				transition: visibility 0s linear 0.25s,opacity 0.25s linear;
+				-webkit-box-shadow: 2px 5px 7px -2px #b1b1b1;
+				visibility: hidden;
+
+
+				li {
+
+					a {
+						color: $navigation-link-color;
+						display: block;
+						font-size: 13px;
+						font-size: 1.3rem;
+						font-weight: normal;
+						padding: 16px 27px;
+						-moz-transition: background-color .25s linear;
+						-webkit-transition: background-color .25s linear;
+						-o-transition: background-color .25s linear;
+						transition: background-color .25s linear;
+					}
+				}
+			}
+
+		}
+	}
+}
+
+
+
+#nav-secondary {
+
+}

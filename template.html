@@ -36,23 +36,36 @@
 
 	<div class="header">
 		<div id="logo" role="banner">
-			<a href="#"><!-- logo --></a>
+			<a href="#">SITE LOGO</a>
 		</div>
 		
-		<ul id="nav-utility">
-			<li><a href="#">Example</a></li>
-			<li><a href="#">Example</a></li>
-		</ul> <!-- /#nav-utility -->
+		<div class="nav-utility">
+			<ul>
+				<li><a href="#">Utility Nav Item</a></li>
+				<li><a href="#">Utility Nav Item</a></li>
+			</ul> 
+		</div> <!-- /.nav-utility -->
 			
 		<form id="search" action="#" role="search">
 			<fieldset>
-				<label for="searchField">Search</label>
-				<input type="search" id="searchField" />
-				<input type="image" src="img/interface/search-arrow.gif" alt="Submit Search" id="searchButton" />
+				<label for="search-field">Search</label>
+				<input type="search" id="search-field" />
+				<button class="button" type="submit" id="search-button">Search</button>
 			</fieldset>
 		</form> <!--/form#search-->
 
-		<div id="nav-primary" role="navigation">
+		<div class="nav-primary" role="navigation">
+			<ul>
+				<li class="top-level">
+					<a href="#">Primary Nav Item</a>
+					<ul class="nav-menu">
+						<li><a href="#">menu item</a></li>
+					</ul>
+				</li>
+				<li class="top-level">
+					<a href="#">Primary Nav Item</a>
+				</li>
+			</ul>
 		</div> <!-- /#nav-primary -->
 	</div> <!-- /div.header -->
 
@@ -60,42 +73,50 @@
 
 	<div class="torso">
 		<div class="content" role="main">
+
+			<h1 class="page-header">Page Header</h1>
 		
 			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
 			diam nonumy eirmod tempor invidunt ut labore et dolore magna 
 			aliquyam erat, sed diam voluptua. At vero eos et accusam et 
 			justo duo dolores et ea rebum. Stet clita kasd gubergren, no 
 			sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+			<h2 class="section-header">Section Header</h2>
 			
-			<form>
+			<form class="form">
 				<fieldset>
-					<div>
+					<div class="form-row">
 						<label for="name">Name:</label>
 						<input type="text" id="name" />
 					</div>
-					<div>
+					<div class="form-row">
 						<label for="email">Email:</label>
 						<input type="text" id="email" />
 					</div>
-					<div>
+					<div class="form-row">
 						<label for="state">State:</label>
 						<select id="state">
 							<option>Confusion</option>
 							<option>Mind</option>
 						</select>
 					</div>
-					<div class="buttonRow">
-						<input type="submit" value="Submit" />
+					<div class="button-row">
+						<button type="submit" class="button">Submit</button>
 					</div>
 				</fieldset>
 			</form>
 		
 		</div> <!-- /.content -->
 			
-		<div id="focus-areas">
+		<div class="focus-areas">
 		</div> <!-- /#focus-areas -->
 
-		<div id="nav-secondary" role="navigation">
+		<div class="nav-secondary" role="navigation">
+			<ul>
+				<li><a href="#">Secondary Nav Item</a></li>
+				<li><a href="#">Secondary Nav Item</a></li>
+			</ul>
 		</div> <!-- /#nav-secondary -->
 	
 	</div> <!-- /.torso -->
