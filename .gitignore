@@ -115,3 +115,4 @@ Backup*/
 UpgradeLog*.XML
 .sass-cache/
 compass_app_log.txt
+css
