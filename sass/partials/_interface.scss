@@ -1,0 +1,27 @@
+﻿
+
+::-moz-selection {
+	background:#1988CC;
+	color:#FFFFFF;
+}
+
+::selection {
+	background:#1988CC;
+	color:#FFFFFF;
+}
+
+
+img {
+	max-width: 100%;
+}
+
+
+body {
+	color: $primary-text-color;
+	font-family: $primary-font;
+	font-size: 14px;
+	line-height: 1.5em;
+	margin: 0;
+	padding: 0;
+}
+

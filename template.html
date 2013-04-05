@@ -3,12 +3,15 @@
 <head>
     <meta charset="utf-8">
 
-	<title>Pregame by PixelMEDIA</title>
+	<title>PixelMEDIA Boilerplate</title>
 	<meta name="copyright" content="[Organization Name] - [Current Year]">
 	<meta name="description" content="Pregame is a website and web application boilerplate created by PixelMEDIA.">
-	
+
 	<link rel="shortcut type" icon="image/x-icon" href="favicon.ico">
-	
+
+	<link rel="stylesheet" href="css/screen.css" media="screen" />
+	<link rel="stylesheet" href="css/print.css" media="print" />
+
 	<!--
 		Modernizr
 		=========
@@ -16,25 +19,27 @@
 		When application is ready for production use be sure to creaate a custome
 		Modernizr build inlcuding only the features used: http://modernizr.com/download/
 	-->
-	<script src="_/js/vendor/modernizr.min.js"></script>
+	<script src="js/vendor/modernizr.min.js"></script>
 
 	<!--
 		Stylesheets
 		===========
-		Compiled css from SASS(SCSS flavor) source files: _/scss/.
+		Compiled css from SASS(SCSS flavor) source files: scss/.
 	-->
 
 	<!-- Styles for Internet Explorer versions less than 9 -->
 	<!--[if lt IE 9]>
-	<link href="_/css/ltie9.css" rel="stylesheet"/>
+	<link href="css/ltie9.css" rel="stylesheet"/>
 	<![endif]-->
 
 	<!-- Style for all other browsers -->
 	<!--[if gte IE 9]><!-->
-	<link rel="stylesheet" href="_/css/screen.css" media="screen">
-	<link rel="stylesheet" href="_/css/print.css" media="print">
+	<link href="css/screen.css" media="screen" rel="stylesheet">
 	<!--<![endif]-->
-	
+
+	<!-- Print styles -->
+	<link href="css/print.css" media="print" rel="stylesheet">
+
 </head>
 
 <body id="top">
@@ -43,70 +48,105 @@
 	<div class="header" role="banner">
 
 		<!-- Site logo -->
-		<div id="logo" class="brand brand-logo">
+		<div class="brand brand-logo">
 			<a href="#"><img src="_/images/logo.png" alt="[Organization Name] Logo"></a>
-		</div><!--/ id="logo"-->
-		
+		</div><!--/.brand-logo-->
+			
 		<!-- Site-wide search form -->
 		<form id="search" action="#" role="search">
-			<fieldset>
-				<legend>Site Search</legend>
-				<input type="search" id="searchField" title="search">
-				<input type="image" src="img/interface/search-arrow.gif" alt="Submit Search" id="searchButton">
-			</fieldset>
-		</form><!--/ id="search"-->
+			<label for="search-field">Search</label>
+			<input type="search" name="siteSearch" id="search-field" />
+			<button class="button" type="submit" id="search-button">Search</button>
+		</form> <!--/id=search-->
 
 		<!-- Primary Navigation -->
 		<nav>
 		<div id="nav-primary" class="navbar" role="navigation">
+			<h2 class="visually-hidden">Primary Navigation</h2>
 			<ul class="nav">
-				<li>Item 1</li>
-				<li>Item 2</li>
-				<li>Item 3</li>
-				<li>Item 4</li>
+				<li><a href="#">Item 1</a></li>
+				<li><a href="#">Item 2</a></li>
+				<li><a href="#">Item 3</a></li>
+				<li><a href="#">Item 4</a></li>
 			</ul>
-		</div> <!-- / id="nav-primary" -->
+		</div> <!-- /id=nav-primary -->
 		</nav>
 
-	</div> <!-- / .header -->
+	</div> <!-- /.header -->
 	</header>
 
-	<div id="main" class="container" role="main">
-	
-		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
-		diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-		aliquyam erat, sed diam voluptua. At vero eos et accusam et 
-		justo duo dolores et ea rebum. Stet clita kasd gubergren, no 
-		sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+	<div id="main" class="main" role="main">
+		<div class="main-content">
+			<h1 class="page-title">Page Title</h1>
 		
-		<form>
-			<fieldset>
-				<div>
-					<label for="name">Name:</label>
-					<input type="text" id="name">
-				</div>
-				<div>
-					<label for="email">Email:</label>
-					<input type="email" id="email" placeholder="e.g. username@example.com">
-				</div>
-				<div>
-					<label for="state">State:</label>
-					<select id="state">
-						<option>Confusion</option>
-						<option>Mind</option>
-					</select>
-				</div>
-				<div class="buttonRow">
-					<input type="submit" value="Submit">
-				</div>
-			</fieldset>
-		</form>
-	
-	</div> <!-- / id="main" -->
-		
-	<div id="focus-areas">
-	</div> <!-- /#focus-areas -->
+			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
+			diam nonumy eirmod tempor invidunt ut labore et dolore magna 
+			aliquyam erat, sed diam voluptua. At vero eos et accusam et 
+			justo duo dolores et ea rebum. Stet clita kasd gubergren, no 
+			sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
+			<h2>Level 2 Heading</h2>
+			<h3>Level 3 Heading</h3>
+			<h4>Level 4 Heading</h4>
+			<h5>Level 5 Heading</h5>
+			<h6>Level 6 Heading</h6>
+
+			<form class="form">
+				<fieldset>
+					<legend>Contact Information</legend>
+
+					<div class="control-group">
+						<label class="control-label" for="name">Name</label>
+						<div class="controls">
+							<input type="text" name="contactName" id="name">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="email">Email</label>
+						<div class="controls">
+							<input type="email" name="contactEmail" id="email">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="name">Address</label>
+						<div class="controls">
+							<input type="text" name="contactAddress" id="address">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="city">City</label>
+						<div class="controls">
+							<input type="text" name="contactCity" id="city">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="state">State:</label>
+						<div class="controls">
+							<select name="contactState" id="state">
+								<option value="MA">Maine</option>
+								<option value="ME">Massachusetts</option>
+								<option value="NH" selected>New Hampshire</option>
+								<option value="VT">Vermont</option>
+								<!-- ... -->
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="zip">Zip Code</label>
+						<div class="controls">
+							<input type="text" name="contactZip" id="zip">
+						</div>
+					</div>
+					<div class="form-actions">
+					  <button type="submit" class="btn btn-primary">Submit</button>
+					  <button type="button" class="btn">Cancel</button>
+					</div>
+				</fieldset>
+			</form>
+		
+		</div> <!-- /.content -->
+	
+	</div> <!-- /id=main -->
 
 	<footer>
 	<div class="footer">
@@ -124,17 +164,10 @@
 		Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary
 	-->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="_/js/vendor/jquery-1.9.1.min.js">\x3C/script>')</script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js">\x3C/script>')</script>
 
-	<!--
-		UI, site/application wide 
-	-->
-	<script src="_/js/ui.js"></script>
-
-	<!--
-		Application logic, site/application wide 
-	-->
-	<script src="_/js/application.js"></script>
+	<!-- Application logic, site/application wide -->
+	<script src="js/app.js"></script>
 
 	<!-- 
 		Google Analytics code.
