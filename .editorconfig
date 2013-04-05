@@ -4,5 +4,6 @@ root = true  ; top-most EditorConfig file
 
 ; Unix-style newlines with a newline ending every file
 [*]
-end_of_line = crlf
+end_of_line = lf
 indent_style = tab
+indent_size = 4
