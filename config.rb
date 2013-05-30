@@ -23,7 +23,7 @@ output_style = (environment == :development) ? :expanded : :compressed
 line_comments = (environment == :development)
 
 # Debug info
-sass_options = (environment == :development) ? { :debug_info => true } : {}
+sass_options = (environment == :development) ? { :debug_info => true, :sourcemap => true } : {}
 # Then in Chrome...
 #   1. go to chrome://flags
 #   2. Enable Developer Tools experiments.
