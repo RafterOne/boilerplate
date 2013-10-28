@@ -10,10 +10,7 @@ module.exports = function(grunt) {
     jshint: {
         options: {
           browser: true,
-          boss: true,
-          sub: true,
-          nonstandard: true,
-          unused: 'vars'
+          boss: true
         },
         gruntfile: {
             src: ['gruntfile.js']
@@ -42,6 +39,18 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    uglify: {
+      options: {
+        banner: '/* ' + config.author + ' - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+          '* Copyright (c) <%= grunt.template.today("yyyy") %> ' + config.author + ';*/ \n',
+        mangle: true
+      },
+      build: {
+        src: config.webRoot + 'js/common.js',
+        dest: config.deploy + 'js/common.min.js'
+      }
+    }
 
     watch: {
       files: ['sass/**'],
