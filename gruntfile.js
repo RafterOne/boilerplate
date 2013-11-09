@@ -50,7 +50,7 @@ module.exports = function(grunt) {
         src: config.webRoot + 'js/common.js',
         dest: config.deploy + 'js/common.min.js'
       }
-    }
+    },
 
     watch: {
       files: ['sass/**'],
