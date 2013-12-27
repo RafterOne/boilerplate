@@ -1,27 +1,56 @@
 
-$break-mid: 500px;
+// media queries
+@mixin respond-to($min-width: null, $max-width: null) {
+	$break-mid: 500px !default;
+	$fix-mqs: false !default;
 
-@mixin respond-to($media) {
-	@if $media == small {
-		@media only screen and (max-width: $break-mid) { @content; }
+	// legacy respond-to() support
+	@if $min-width == small {
+		$min-width: null;
+		$max-width: $break-mid;
 	}
-	@else if $media == large {
-		@media only screen and (min-width: $break-mid + 1) { @content; }
+	@else if $min-width == large {
+		$min-width: $break-mid + 1;
+	}
+
+	// If we're outputting for a fixed width...
+	@if $fix-mqs {
+		// ...and if we should apply these rules...
+		@if ($min-width and $max-width) {
+			@if (($fix-mqs >= $min-width) and ($fix-mqs <= $max-width)) {
+				@content;
+			}
+		}
+		@else if ($min-width and $max-width != null) {
+			@if $fix-mqs <= $min-width {
+				@content;
+			}
+		}
+		@else if ($max-width and $min-width != null) {
+			@if $fix-mqs <= $max-width {
+				@content;
+			}
+		}
+	} @else {
+		// Otherwise, output it using media query
+		$mq: "only screen";
+
+		@if $min-width{
+			$mq: "#{$mq} and (min-width: #{$min-width})";
+		}
+		@if $max-width{
+			$mq: "#{$mq} and (max-width: #{$max-width})";
+		}
+		@media #{$mq} {
+				@content;
+		}
 	}
 }
 
-
-
-/* grid mixins */
-
+// grid mixins
 @mixin col {
 	border:0px solid rgba(0,0,0,0);
 	float:left;
 	@include box-sizing(border-box);
 	@include background-clip(padding-box !important);
 }
-
-
-
-
-
