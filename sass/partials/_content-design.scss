@@ -13,6 +13,10 @@ a:active {
 	}
 }
 
+.visually-hidden {
+	@extend %visuallyhidden;
+}
+
 
 /* ===================================================================== HEADERS */
 
