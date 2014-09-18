@@ -98,5 +98,12 @@ $fix-mqs: false !default;
 	background-image: linear-gradient(top, $fromColor, $toColor);
 }
 
+// Box Shadow mixin
+@mixin box-shadow($top, $left, $blur, $color) {
+	-webkit-box-shadow:$top $left $blur $color;
+	-moz-box-shadow:$top $left $blur $color;
+	box-shadow:$top $left $blur $color;
+}
+
 
 
