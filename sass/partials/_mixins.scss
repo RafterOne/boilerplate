@@ -62,19 +62,6 @@ $fix-mqs: false !default;
 
 /* content mixins */
 
-// Clearfix - use like this .foo { @extend %clearfix; }
-%clearfix {
-	*zoom: 1;
-	
-	&:before, &:after {
-		content: " ";
-		display: table;
-	}
-	
-  	&:after {
-    	clear: both;
-  	}
-}
 
 // Rem font size with fallback - use like this .foo { @include font-size(); }
 @function getRem($fontSize) {
