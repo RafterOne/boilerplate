@@ -1,3 +1,4 @@
+/* media queries */
 
 $break-mid: 500px;
 
@@ -7,6 +8,43 @@ $break-mid: 500px;
 	}
 	@else if $media == large {
 		@media only screen and (min-width: $break-mid + 1) { @content; }
+	}
+}
+
+// Webkit pixel ratio
+@mixin pixel-ratio($ratio) {
+	@media screen and (-webkit-min-device-pixel-ratio: $ratio) {
+		@content;
+	}
+}
+
+// Respond Min
+$fix-mqs: false !default;
+
+@mixin respond-min($width) {
+	@if $fix-mqs {
+		@if $fix-mqs >= $width {
+			@content;
+		}
+	}
+	@else {
+		@media screen and (min-width: $width) {
+			@content;
+		}
+	}
+}
+
+// Respond Max
+@mixin respond-max($width) {
+	@if $fix-mqs {
+		@if $fix-mqs < $width {
+			@content;
+		}
+	}
+	@else {
+		@media screen and (max-width: $width) {
+			@content;
+		}
 	}
 }
 
