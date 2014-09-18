@@ -1,3 +1,4 @@
+/* Media Queries */
 
 $break-mid: 500px;
 
@@ -9,6 +10,24 @@ $break-mid: 500px;
 		@media only screen and (min-width: $break-mid + 1) { @content; }
 	}
 }
+
+
+// Respond Max
+@mixin respond-max($width) {
+	@if $fix-mqs {
+		@if $fix-mqs < $width {
+			@content;
+		}
+	}
+	@else {
+		@media screen and (max-width: $width) {
+			@content;
+		}
+	}
+}
+
+
+
 
 
 
