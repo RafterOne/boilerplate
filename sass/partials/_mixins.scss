@@ -62,7 +62,7 @@ $fix-mqs: false !default;
 
 /* content mixins */
 
-// Clearfix - use like this ".foo { @extend %clearfix }
+// Clearfix - use like this .foo { @extend %clearfix; }
 %clearfix {
 	*zoom: 1;
 	
@@ -74,6 +74,17 @@ $fix-mqs: false !default;
   	&:after {
     	clear: both;
   	}
+}
+
+// Rem font size with fallback - use like this .foo { @include font-size(); }
+@function getRem($fontSize) {
+	$remSize: $fontSize / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin font-size($fontSize) {
+	font-size: $fontSize;
+	font-size: getRem($fontSize);
 }
 
 
