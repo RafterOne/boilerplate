@@ -11,43 +11,6 @@ $break-mid: 500px;
 	}
 }
 
-// Webkit pixel ratio
-@mixin pixel-ratio($ratio) {
-	@media screen and (-webkit-min-device-pixel-ratio: $ratio) {
-		@content;
-	}
-}
-
-// Respond Min
-$fix-mqs: false !default;
-
-@mixin respond-min($width) {
-	@if $fix-mqs {
-		@if $fix-mqs >= $width {
-			@content;
-		}
-	}
-	@else {
-		@media screen and (min-width: $width) {
-			@content;
-		}
-	}
-}
-
-// Respond Max
-@mixin respond-max($width) {
-	@if $fix-mqs {
-		@if $fix-mqs < $width {
-			@content;
-		}
-	}
-	@else {
-		@media screen and (max-width: $width) {
-			@content;
-		}
-	}
-}
-
 
 
 /* grid mixins */
@@ -58,39 +21,3 @@ $fix-mqs: false !default;
 	@include box-sizing(border-box);
 	@include background-clip(padding-box !important);
 }
-
-
-/* content mixins */
-
-
-// Rem font size with fallback - use like this .foo { @include font-size(); }
-@function getRem($fontSize) {
-	$remSize: $fontSize / 16px;
-	@return $remSize * 1rem;
-}
-
-@mixin font-size($fontSize) {
-	font-size: $fontSize;
-	font-size: getRem($fontSize);
-}
-
-// Linear Gradient mixin - vendor prefixing and fallback color
-@mixin linear-gradient($fromColor, $toColor) {
-	background-color: $toColor; /* Fallback Color */
-	background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
-	background-image: -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
-	background-image: -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
-	background-image: -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
-	background-image: linear-gradient(top, $fromColor, $toColor);
-}
-
-// Box Shadow mixin
-@mixin box-shadow($top, $left, $blur, $color) {
-	-webkit-box-shadow:$top $left $blur $color;
-	-moz-box-shadow:$top $left $blur $color;
-	box-shadow:$top $left $blur $color;
-}
-
-
-
