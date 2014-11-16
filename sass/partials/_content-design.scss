@@ -30,8 +30,8 @@ a:active {
 /* ===================================================================== BUTTONS */
 
 .button {
-	@include border-radius($default-border-radius);
 	background-color: $primary-button-color;
+	border-radius: $default-border-radius;
 	color: $tertiary-text-color;
 	padding: 5px 20px;
 

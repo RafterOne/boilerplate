@@ -17,26 +17,32 @@ module.exports = function(grunt) {
         }
     },
 
-    compass: {
+    sass: {
       dev: {
         options: {
-          sassDir: config.webRoot + 'sass',
-          cssDir: config.webRoot + 'css',
-          force: true,
-          noLineComments: false,
-          environment: 'development',
-          outputStyle: 'expanded'
-        }
+          sourcemap: true,
+          style: 'expanded' //Can be nested, compact, compressed, expanded.
+        },
+        files: [{
+          expand: true,
+          cwd: config.webRoot + '/sass',
+          src: ['*.scss'],
+          dest: config.webRoot + '/css',
+          ext: '.css'
+        }]
       },
       release: {
         options: {
-          sassDir: config.webRoot + 'sass',
-          cssDir: config.webRoot + 'css',
-          force: true,
-          noLineComments: true,
-          environment: 'production',
-          outputStyle: 'compressed'
-        }
+          sourcemap: false,
+          style: 'compact'
+        },
+        files: [{
+          expand: true,
+          cwd: config.webRoot + '/sass',
+          src: ['*.scss'],
+          dest: config.webRoot + '/css',
+          ext: '.css'
+        }]
       }
     },
 
@@ -54,7 +60,7 @@ module.exports = function(grunt) {
 
     watch: {
       files: ['sass/**'],
-      tasks: ['compass:dev']
+      tasks: ['sass:dev']
     }
   });
 
@@ -64,7 +70,9 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['jshint:gruntfile']);
-  grunt.registerTask('deploy', ['jshint', 'compass:release']);
-  grunt.registerTask('listen', ['jshint:gruntfile', 'compass:dev', 'watch']);
+  grunt.registerTask('vsbuild', ['jshint:gruntfile', 'sass:dev']);
+  grunt.registerTask('css', ['sass:dev']);
+  grunt.registerTask('deploy', ['jshint', 'sass:release']);
+  grunt.registerTask('listen', ['jshint:gruntfile', 'sass:dev', 'watch']);
 
 };

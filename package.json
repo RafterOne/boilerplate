@@ -2,14 +2,19 @@
   "name" : "pixelmedia-boilerplate",
   "version" : "0.0.1",
   "author": {
-    "name": "PixelMEDIA"
+      "name": "PixelMEDIA"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "matchdep": "~0.3.0",
-    "grunt-contrib-compass": "~0.5.0",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-watch": "~0.3.1",
-    "grunt-contrib-uglify": "~0.2.0"
+      "grunt": "~0.4.1",
+      "matchdep": "~0.3.0",
+      "grunt-contrib-sass": "~0.7.3",
+      "grunt-contrib-jshint": "~0.6.4",
+      "grunt-contrib-watch": "~0.3.1",
+      "grunt-contrib-uglify": "~0.2.0",
+  "grunt-contrib-copy": "~0.5.0"
+  },
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://bitbucket.org/pixelmedia/pxl-front-end-boilerplate.git"
   }
 }

@@ -2,10 +2,8 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-
- // Compass
- // Using Compass? Import Compass modules here.
-@import "compass/css3";
+// Frameworks
+@import "bourbon/bourbon";
 
 // Helpers
 @import "partials/normalize";
