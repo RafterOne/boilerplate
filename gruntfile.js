@@ -70,7 +70,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['jshint:gruntfile']);
-  grunt.registerTask('vsbuild', ['jshint:gruntfile', 'sass:dev']);
+  grunt.registerTask('devbuild', ['jshint:gruntfile', 'sass:dev']);
   grunt.registerTask('css', ['sass:dev']);
   grunt.registerTask('deploy', ['jshint', 'sass:release']);
   grunt.registerTask('listen', ['jshint:gruntfile', 'sass:dev', 'watch']);
