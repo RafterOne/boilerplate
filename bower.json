@@ -1,0 +1,13 @@
+{
+  "name": "PixelMEDIA",
+  "authors": [
+    "PixelMedia"
+  ],
+  "license": "Private",
+  "private": true,
+  "dependencies": {
+    "bourbon": "thoughtbot/bourbon#~4.0.2",
+    "neat": "thoughtbot/neat#~1.7.0",
+    "jquery-1.11.1.min": "http://code.jquery.com/jquery-1.11.1.min.js"
+  }
+}

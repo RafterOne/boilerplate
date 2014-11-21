@@ -20,27 +20,26 @@ module.exports = function(grunt) {
     sass: {
       dev: {
         options: {
-          sourcemap: true,
           style: 'expanded' //Can be nested, compact, compressed, expanded.
         },
         files: [{
           expand: true,
-          cwd: config.webRoot + '/sass',
+          cwd: config.webRoot + 'static/sass',
           src: ['*.scss'],
-          dest: config.webRoot + '/css',
+          dest: config.webRoot + 'static/css',
           ext: '.css'
         }]
       },
       release: {
         options: {
-          sourcemap: false,
-          style: 'compact'
+          sourcemap: 'none',
+          style: 'compressed'
         },
         files: [{
           expand: true,
-          cwd: config.webRoot + '/sass',
+          cwd: config.webRoot + 'static/sass',
           src: ['*.scss'],
-          dest: config.webRoot + '/css',
+          dest: config.webRoot + 'static/css',
           ext: '.css'
         }]
       }
@@ -53,13 +52,13 @@ module.exports = function(grunt) {
         mangle: true
       },
       build: {
-        src: config.webRoot + 'js/common.js',
-        dest: config.deploy + 'js/common.min.js'
+        src: config.webRoot + 'static/js/common.js',
+        dest: config.deploy + 'static/js/common.min.js'
       }
     },
 
     watch: {
-      files: ['sass/**'],
+      files: ['static/sass/**'],
       tasks: ['sass:dev']
     }
   });
