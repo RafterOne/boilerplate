@@ -66,6 +66,23 @@ module.exports = function(grunt) {
       dist: {
         devFile: "static/vendor/modernizr/modernizr.js",
         outputFile: "static/vendor/modernizr-custom.js",
+        extra: {
+          "shiv" : true,
+          "printshiv" : false,
+          "load" : true,
+          "mq" : true,
+          "cssclasses" : true
+        },
+        "extensibility" : {
+          "addtest" : false,
+          "prefixed" : false,
+          "teststyles" : true,
+          "testprops" : true,
+          "testallprops" : true,
+          "hasevents" : false,
+          "prefixes" : true,
+          "domprefixes" : true
+        },
         files: {
           src: [
             config.webRoot + 'static/sass/**/*.scss', 
