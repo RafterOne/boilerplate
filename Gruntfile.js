@@ -60,6 +60,21 @@ module.exports = function(grunt) {
     watch: {
       files: ['static/sass/**'],
       tasks: ['sass:dev']
+    },
+
+    modernizr: {
+      dist: {
+        devFile: "static/vendor/modernizr/modernizr.js",
+        outputFile: "static/vendor/modernizr-custom.js",
+        files: {
+          src: [
+            config.webRoot + 'static/sass/**/*.scss', 
+            config.webRoot + 'static/js/**/*.js',
+            '!' + config.webRoot + 'static/js/**/*.min.js'
+          ]
+        },
+        uglify: true,
+      }
     }
   });
 
