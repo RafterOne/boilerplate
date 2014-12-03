@@ -8,7 +8,7 @@
   "dependencies": {
     "bourbon": "thoughtbot/bourbon#~4.0.2",
     "neat": "thoughtbot/neat#~1.7.0",
-    "jquery-1.11.1.min": "http://code.jquery.com/jquery-1.11.1.min.js"
+    "jquery": "~2.1.1",
     "modernizr": "~2.8.3"
   }
 }
