@@ -1,0 +1,22 @@
+/* In this file you should centralize your imports
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// Frameworks
+@import "../vendor/bourbon/dist/bourbon";
+@import "../vendor/neat/app/assets/stylesheets/neat";
+
+// Helpers
+@import "partials/normalize";
+@import "partials/base";
+@import "partials/mixins";
+@import "partials/extends";
+
+// 3rd party
+
+// Interface and content
+@import "partials/interface";
+@import "partials/content-design";
+@import "partials/navigation";
+@import "partials/forms";
+
